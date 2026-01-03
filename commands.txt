@@ -1,0 +1,5 @@
+npm install gsap @gsap/react
+npm install gsap @gsap/react react-responsive
+
+npm create vite@latest ./
+npm install tailwindcss @tailwindcss/vite

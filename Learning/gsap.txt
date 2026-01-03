@@ -1,0 +1,101 @@
+type: "chars, words" = “Please cut my text into words and also into letters, so I can choose to animate either whole words or individual letters with GSAP.”
+
+Comma = "give me ALL these split types together"
+​
+
+type: "chars, words" uses a comma-separated string because SplitText accepts multiple split types in a single config object.
+
+Why this syntax?
+SplitText supports 4 split modes:
+
+"lines" - splits into lines
+
+"words" - splits into words
+
+"chars" - splits into characters
+
+"words,chars" - does both words AND chars
+
+The comma = "do multiple at once"
+
+---------------------
+
+
+so what is the difference in gsap.from and gsap.to ?
+
+GSAP .from() vs .to() - Core Difference
+.to(): Starts from current position → animates TO your target values.
+.from(): Starts from your values → animates TO current position.
+
+Current element state: yPercent: 0 (visible on screen)
+
+gsap.to(heroSplit.chars, { yPercent: 100 })
+↓
+START: y=0 (visible)    →    END: y=100 (slides DOWN off screen)
+
+gsap.from(heroSplit.chars, { yPercent: 100 })
+↓
+START: y=100 (off screen) →    END: y=0 (slides UP into view)
+
+---------------
+
+"When video loads, tell ScrollTrigger: 'As user scrolls from start→end, move video timeline from 0s→end automatically.'
+
+
+1. Wait for video to load ("onloadedmetadata")
+2. Tell timeline: "Animate video.currentTime from 0 → full length"
+3. ScrollTrigger: "As user scrolls, update currentTime to match scroll position"
+4. Result: Video "plays" by changing frames with scroll!
+
+
+-------------
+With "-=0.5"
+"-=0.5" means:
+“Start this 0.5 seconds before the previous animation ends.”
+
+So grid animation overlaps the end of the title animation.
+
+Timeline now:
+
+text
+[ title animation (1s) ]
+          [ grid animation (1s) ]
+time ------>
+0s        0.5s                1.5s
+So the “sauce” is:
+
+"+=X" → start X seconds after previous animation’s end.
+
+"-=X" → start X seconds before previous animation’s end (overlap).
+
+No 3rd arg → start exactly at previous animation’s end.
+
+In plain words for your code:
+
+Animate the heading words; when they are halfway done (0.5s left), start fading in the top and bottom grid items, so everything feels more continuous and not strictly one-after-another.
+
+With "-=0.5"
+"-=0.5" means:
+“Start this 0.5 seconds before the previous animation ends.”
+
+So grid animation overlaps the end of the title animation.
+
+Timeline now:
+
+text
+[ title animation (1s) ]
+          [ grid animation (1s) ]
+time ------>
+0s        0.5s                1.5s
+So the “sauce” is:
+
+"+=X" → start X seconds after previous animation’s end.
+
+"-=X" → start X seconds before previous animation’s end (overlap).
+
+No 3rd arg → start exactly at previous animation’s end.
+
+In plain words for your code:
+
+Animate the heading words; when they are halfway done (0.5s left), start fading in the top and bottom grid items, so everything feels more continuous and not strictly one-after-another.
+

@@ -1,0 +1,97 @@
+TEXT WRAP 
+
+text-nowrap is a Tailwind CSS utility class that prevents text from wrapping onto the next line.
+
+It sets the CSS property text-wrap: nowrap;.
+
+The text will stay on a single line, even if it overflows its container (unless you also add things like overflow-hidden or truncate).
+
+
+--------------
+
+
+
+md:bottom-auto is a responsive Tailwind class.
+
+Break it:
+
+md: → apply this rule from the md breakpoint and up (medium screens and larger).
+
+bottom-auto → sets the CSS property bottom: auto;.
+
+So combined:
+
+On small screens: whatever bottom-* value you set without md: is used (for example -bottom-20).
+
+On md and larger screens: that bottom value is reset/removed (bottom: auto), so the element is no longer anchored to the bottom and will instead use top or normal flow for vertical position.
+
+------------
+
+space-y-5 is a Tailwind class that adds vertical gap between the children of a container.
+
+Apply it on the parent div, not on each child.
+
+It sets a margin between every pair of direct children on the y‑axis.
+
+5 corresponds to 1.25rem (20px), so it becomes:
+
+So: space-y-5 = “put 20px vertical space between each stacked child element.
+
+----------------------
+In easy words:
+"React keeps rebuilding your page. useGSAP says: 'Chill React, I'll handle GSAP timing and cleanup myself. Just let me run my animations safely.'"
+
+
+-------------------------------------------
+
+This creates a custom utility class that cuts your image into a shape using a mask.
+
+css
+@utility masked-img {
+  mask-image: url("/images/mask-img.png");
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: 50%;
+}
+Breakdown in simple terms:
+
+@utility masked-img { ... }
+
+Defines a reusable class named masked-img.
+
+Now you can write: <img className="masked-img" ... /> and all the styles inside apply.
+
+mask-image: url("/images/mask-img.png");
+
+Uses /images/mask-img.png as a mask.
+
+A mask is like a stencil:
+
+White/opaque areas of the mask = keep/show the image.
+
+Black/transparent areas = hide/make the image transparent.
+
+mask-repeat: no-repeat;
+
+Do not tile the mask; use it only once.
+
+mask-position: center;
+
+Place the mask in the center of the element.
+
+mask-size: 50%;
+
+Make the mask cover 50% of the element’s size (so the stencil is smaller than the full image).
+
+What you should visually expect:
+
+Without masked-img: your image shows completely as usual.
+
+With masked-img: only the parts of the image that fall inside the “white” area of mask-img.png (at 50% size, centered) are visible; the rest looks cut out / transparent, creating a cool shaped image effect (circle, splash, blob, etc.), depending on the mask graphic
+
+
+-----------------
+So in plain words for you:
+
+repeat = “copy this shape many times to cover everything.”
+no-repeat = “use this shape only once (no copies), in the position/size I specify.”
