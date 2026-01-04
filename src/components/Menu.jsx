@@ -1,32 +1,39 @@
 "use client";
 
 import { allCocktails } from "../../constants";
-import { useRef, useState } from "react";
+import { useState } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
 const Menu = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const [touchStart, setTouchStart] = useState(0);
+  const [touchStartX, setTouchStartX] = useState(0);
+  const [touchStartY, setTouchStartY] = useState(0);
 
-  const swipeThreShold = 30;
+  const swipeThreShold = 50;
 
   const handleTouchStart = (e) => {
-    setTouchStart(e.touches[0].clientX);
+    setTouchStartX(e.touches[0].clientX);
+    setTouchStartY(e.touches[0].clientY);
   };
 
   const handleTouchEnd = (e) => {
-    const currentTouchend = e.changedTouches[0].clientX;
-    const currentTouchStart = touchStart;
+    const touchEndX = e.changedTouches[0].clientX;
+    const touchEndY = e.changedTouches[0].clientY;
 
-    const deltaX = currentTouchStart - currentTouchend;
+    // const currentTouchStart = touchStart;
+    const deltaX = touchStartX - touchEndX;
+    const deltaY = touchStartY - touchEndY;
 
-    if (Math.abs(deltaX) > swipeThreShold) {
+    const absDeltaX = Math.abs(deltaX);
+    const absDeltaY = Math.abs(deltaY);
+
+    if (absDeltaX > swipeThreShold && absDeltaX > absDeltaY) {
       if (deltaX > 0) {
-        handleActiveLink(currentIndex + 1);
+        handleActiveLink(currentIndex + 1); // Horizontal left
       } else {
-        handleActiveLink(currentIndex - 1);
+        handleActiveLink(currentIndex - 1); // Horizontal right
       }
     }
   };
@@ -90,10 +97,10 @@ const Menu = () => {
           id="wrapper"
           className="md:h-auto min-h-[46vh]"
         >
-          <div className="flex justify-between items-center md:mt-20 mt-40">
+          <div className="md:px-0 px-2 flex justify-between items-center md:mt-20 mt-10">
             <button
               onClick={() => handleActiveLink(currentIndex - 1)}
-              className="max-w-20"
+              className="max-w-16"
             >
               <span className="md:text-3xl font-modern-negra">
                 {prevCocktail.name}
@@ -107,7 +114,7 @@ const Menu = () => {
 
             <button
               onClick={() => handleActiveLink(currentIndex + 1)}
-              className="max-w-20"
+              className="max-w-16"
             >
               <span className="md:text-3xl font-modern-negra">
                 {nextCocktail.name}
@@ -122,7 +129,7 @@ const Menu = () => {
 
           <div
             id="cocktails"
-            className="absolute md:bottom-0 bottom-[45%] left-1/2 -translate-x-1/2 md:mb-0 flex-center md:h-[60vh] h-[37vh]"
+            className="pt-20 md:bottom-0 bottom-[45%] md:mt-0 mt-14 md:mb-0 mb-10 flex-center md:h-[60vh] h-[60vh] w-full"
           >
             <img
               src={currentCocktail.image}
@@ -134,13 +141,13 @@ const Menu = () => {
 
         <div
           id="details"
-          className="absolute flex justify-between gap-20 md:bottom-30 bottom-16 w-10/12"
+          className="absolute flex justify-between gap-20 md:bottom-30 w-10/12"
         >
           <div className="md:space-y-4 space-y-10 max-w-40">
             <p>Recipe for:</p>
             <p
               id="titles"
-              className="font-modern-negra text-yellow md:text-6xl"
+              className="font-modern-negra text-yellow md:text-6xl text-4xl"
             >
               {currentCocktail.name}
             </p>
