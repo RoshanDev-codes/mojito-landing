@@ -35,7 +35,7 @@ const Art = () => {
   }, []);
 
   return (
-    <div id="art" className="min-h-dvh relative radial-gradient">
+    <div id="work" className="min-h-dvh relative radial-gradient">
       <div className="container p-5 mx-auto min-h-dvh">
         <h1 className="will-fade mt-20 leading-none md:text-[20vw] text-8xl font-modern-negra text-center text-[#505050]">
           The Art

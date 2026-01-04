@@ -69,7 +69,7 @@ const Menu = () => {
     );
   }, [currentIndex]);
   return (
-    <section id="menu" className="relative radial-gradient">
+    <section id="cocktails" className="relative radial-gradient">
       <div className="md:py-20 container mx-auto p-5 min-h-dvh">
         <nav className="grid md:grid-cols-4 grid-cols-2 md:gap-10 gap-5 max-w-7xl mx-auto">
           {allCocktails.map((cocktails, index) => {

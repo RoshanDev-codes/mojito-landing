@@ -1,4 +1,5 @@
 import gsap from "gsap";
+
 import { ScrollTrigger, SplitText } from "gsap/all";
 
 import Navbar from "./components/Navbar.jsx";
@@ -13,7 +14,7 @@ gsap.registerPlugin(ScrollTrigger, SplitText);
 
 const App = () => {
   return (
-    <main className="w-full overflow-x-hidden">
+    <main className="w-full overflow-visible">
       <Navbar />
       <Hero />
       <Cocks />
