@@ -31,7 +31,8 @@ const Navbar = () => {
     gsap.to(navContainerRef.current, {
       y: isNavVisible ? 0 : -100,
       opacity: isNavVisible ? 1 : 0,
-      duration: 0.2,
+      ease: "power1.inOut",
+      duration: 0.5,
     });
   }, [isNavVisible]);
 
@@ -46,7 +47,7 @@ const Navbar = () => {
   return (
     <nav
       ref={navContainerRef}
-      className="fixed w-full transition-all duration-500 ease-out flex md:flex-row flex-col items-center text-white font-medium z-50"
+      className="fixed w-full md:h-16 transition-all duration-500 ease-out flex md:flex-row flex-col items-center text-white font-medium z-50"
     >
       <div className="flex flex-col md:flex-row md:justify-between container mx-auto px-5 items-center md:gap-5 gap-2 md:py-5 py-2">
         <button onClick={handleResetLink}>
@@ -64,7 +65,7 @@ const Navbar = () => {
                   href={`#${link.id}`}
                   className={`${
                     isActive === link.id ? "border-b-2 border-black pb-2" : ""
-                  } hover:text-yellow uppercase font-mono font-semibold tracking-widest transition-all duration-100 ease-out`}
+                  } hover:border-b pb-2 uppercase font-mono font-semibold tracking-widest transition-all duration-100 ease-in-out`}
                 >
                   {link.title}
                 </a>

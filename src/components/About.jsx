@@ -31,7 +31,7 @@ const About = () => {
           yPercent: 100,
           opacity: 0,
           ease: "expo.out",
-          duration: 1,
+          duration: 0.7,
           stagger: 0.02,
         },
         0
@@ -44,7 +44,7 @@ const About = () => {
           duration: 1,
           stagger: 0.04,
         },
-        "-=0.8"
+        "-=1"
       );
   }, []);
 
