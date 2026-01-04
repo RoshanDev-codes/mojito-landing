@@ -53,12 +53,13 @@ const About = () => {
       <div id="will" className="container mx-auto md:py-40 py-28 px-8">
         <div className="grid grid-cols-1 md:grid-cols-12">
           <div className="col-span-8 space-y-10 mb-10 md:mb-0">
-            <p
+            <a
+              href="#cocktails"
               id="element"
-              className="bg-white text-black px-4 py-2 rounded-full inline-block text-lg font-semibold"
+              className="cursor-pointer bg-white text-black px-4 py-2 rounded-full inline-block text-lg font-semibold"
             >
               Best Cocktails
-            </p>
+            </a>
 
             <p className="text-5xl md:text-6xl font-modern-negra max-w-lg">
               Where every detail matters -from muddle to garnish
