@@ -2,10 +2,38 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 
 import { navLinks } from "../../constants/index.js";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { useWindowScroll } from "react-use";
 
 const Navbar = () => {
+  const navContainerRef = useRef(null);
   const [isActive, setIsActive] = useState(null);
+  const [isNavVisible, setIsNavVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const { y: currentScroll } = useWindowScroll();
+
+  // ✅ Move scroll logic to useEffect
+  useEffect(() => {
+    if (currentScroll === 0) {
+      setIsNavVisible(true);
+      navContainerRef.current.classList.remove("floating-nav");
+    } else if (currentScroll > lastScrollY && currentScroll > 50) {
+      navContainerRef.current.classList.add("floating-nav");
+      setIsNavVisible(false);
+    } else if (currentScroll < lastScrollY) {
+      navContainerRef.current.classList.add("floating-nav");
+      setIsNavVisible(true);
+    }
+    setLastScrollY(currentScroll);
+  }, [currentScroll, lastScrollY]); // ✅ Dependencies prevent loop
+
+  useGSAP(() => {
+    gsap.to(navContainerRef.current, {
+      y: isNavVisible ? 0 : -100,
+      opacity: isNavVisible ? 1 : 0,
+      duration: 0.2,
+    });
+  }, [isNavVisible]);
 
   const handleActiveLink = (link) => {
     setIsActive(link.id);
@@ -16,8 +44,11 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="w-full top-4 z-50">
-      <div className="flex flex-col md:flex-row md:justify-between container mx-auto px-5 items-center gap-5 py-5">
+    <nav
+      ref={navContainerRef}
+      className="fixed w-full transition-all duration-500 ease-out flex md:flex-row flex-col items-center text-white font-medium z-50"
+    >
+      <div className="flex flex-col md:flex-row md:justify-between container mx-auto px-5 items-center md:gap-5 gap-2 md:py-5 py-2">
         <button onClick={handleResetLink}>
           <a href="#home" className="flex items-center gap-2">
             <img src="images/logo.png" alt="logo" />
@@ -32,10 +63,8 @@ const Navbar = () => {
                 <a
                   href={`#${link.id}`}
                   className={`${
-                    isActive === link.id
-                      ? "border-b-2 border-white/80 pb-2"
-                      : ""
-                  } hover:text-yellow transition-all duration-100 ease-out`}
+                    isActive === link.id ? "border-b-2 border-black pb-2" : ""
+                  } hover:text-yellow uppercase font-mono font-semibold tracking-widest transition-all duration-100 ease-out`}
                 >
                   {link.title}
                 </a>

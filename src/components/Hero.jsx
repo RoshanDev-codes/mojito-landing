@@ -60,7 +60,7 @@ const Hero = () => {
       <section className="min-h-dvh border border-transparent relative z-10 bg-[url('images/noise.png')] ">
         <h1
           id="title"
-          className="text-8xl md:text-[15vw] font-modern-negra text-center mt-40 md:mt-32 tracking-wide"
+          className="text-8xl md:text-[15vw] font-modern-negra text-center mt-48 md:mt-32 tracking-wide"
         >
           MOJITO
         </h1>
