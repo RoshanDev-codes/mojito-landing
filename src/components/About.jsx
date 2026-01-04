@@ -98,7 +98,7 @@ const About = () => {
                 className="object-cover size-full"
               />
 
-              <div className="absolute bg-[url('images/noise.png')] inset-0"></div>
+              <div className="absolute bg-[url('/images/noise.png')] inset-0"></div>
             </div>
           </div>
 
@@ -109,7 +109,7 @@ const About = () => {
                 alt="grid-image-2"
                 className="object-cover size-full"
               />
-              <div className="absolute bg-[url('images/noise.png')] inset-0"></div>
+              <div className="absolute bg-[url('/images/noise.png')] inset-0"></div>
             </div>
           </div>
 
@@ -120,7 +120,7 @@ const About = () => {
                 alt="grid-image-3"
                 className="object-cover size-full"
               />
-              <div className="absolute bg-[url('images/noise.png')] inset-0"></div>
+              <div className="absolute bg-[url('/images/noise.png')] inset-0"></div>
             </div>
           </div>
         </div>
@@ -136,7 +136,7 @@ const About = () => {
                 alt="grid-image-4"
                 className="object-cover size-full"
               />
-              <div className="absolute bg-[url('images/noise.png')] inset-0"></div>
+              <div className="absolute bg-[url('/images/noise.png')] inset-0"></div>
             </div>
           </div>
 
@@ -147,7 +147,7 @@ const About = () => {
                 alt="grid-image-5"
                 className="object-cover size-full"
               />
-              <div className="absolute bg-[url('images/noise.png')] inset-0"></div>
+              <div className="absolute bg-[url('/images/noise.png')] inset-0"></div>
             </div>
           </div>
         </div>
