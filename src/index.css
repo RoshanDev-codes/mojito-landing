@@ -43,13 +43,6 @@ body {
   );
 }
 
-/* @utility masked-img {
-  mask-image: url("/images/mask-img.png");
-  mask-repeat: no-repeat;
-  mask-position: center;
-  mask-size: 50%;
-} */
-
 @utility flex-center {
   @apply flex justify-center items-center;
 }
