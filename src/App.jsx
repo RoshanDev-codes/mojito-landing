@@ -7,7 +7,7 @@ import Cocks from "./components/Cocks.jsx";
 import About from "./components/About.jsx";
 import Art from "./components/Art.jsx";
 import Menu from "./components/Menu.jsx";
-import Contact from "./components/Contact.jsx";
+import Cta from "./components/Cta.jsx";
 
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
@@ -20,8 +20,7 @@ const App = () => {
       <About />
       <Art />
       <Menu />
-
-      <div className="min-h-dvh"></div>
+      <Cta />
       <div className="min-h-dvh"></div>
     </main>
   );

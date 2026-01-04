@@ -69,7 +69,7 @@ const Menu = () => {
     );
   }, [currentIndex]);
   return (
-    <section id="menu" className="min-h-dvh relative radial-gradient">
+    <section id="menu" className="relative radial-gradient">
       <div className="md:py-20 container mx-auto p-5 min-h-dvh">
         <nav className="grid md:grid-cols-4 grid-cols-2 md:gap-10 gap-5 max-w-7xl mx-auto">
           {allCocktails.map((cocktails, index) => {
@@ -141,7 +141,7 @@ const Menu = () => {
 
         <div
           id="details"
-          className="absolute flex justify-between gap-20 md:bottom-30 w-10/12"
+          className="md:absolute flex justify-between gap-20 md:bottom-30 w-10/12"
         >
           <div className="md:space-y-4 space-y-10 max-w-40">
             <p>Recipe for:</p>
