@@ -129,7 +129,7 @@ const Menu = () => {
 
           <div
             id="cocktails"
-            className="pt-20 md:bottom-0 bottom-[45%] md:mt-0 mt-14 md:mb-0 mb-20 border flex-center md:h-[60vh] h-[60vh] w-full"
+            className="pt-20 md:bottom-0 bottom-[45%] md:mt-0 mt-14 md:mb-0 mb-20 flex-center md:h-[60vh] h-[60vh] w-full"
           >
             <img
               src={currentCocktail.image}

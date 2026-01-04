@@ -50,7 +50,7 @@ const About = () => {
 
   return (
     <section id="about" className="min-h-dvh">
-      <div id="will" className="container mx-auto md:py-40 py-28 px-5">
+      <div id="will" className="container mx-auto md:py-40 py-28 px-8">
         <div className="grid grid-cols-1 md:grid-cols-12">
           <div className="col-span-8 space-y-10 mb-10 md:mb-0">
             <p
@@ -90,7 +90,7 @@ const About = () => {
           className="grid mt-12 grid-cols-1 md:grid-cols-12 md:gap-5 gap-10"
         >
           <div className="md:col-span-3 md:w-fit w-full">
-            <div className="rounded-3xl relative overflow-hidden size-full">
+            <div className="rounded-3xl relative h-72 overflow-hidden size-full">
               <img
                 src="images/abt1.png"
                 alt="grid-image-1"
@@ -100,7 +100,7 @@ const About = () => {
           </div>
 
           <div className="md:col-span-6">
-            <div className="rounded-3xl relative overflow-hidden size-full">
+            <div className="rounded-3xl relative h-72 overflow-hidden size-full">
               <img
                 src="images/abt2.png"
                 alt="grid-image-2"
@@ -110,7 +110,7 @@ const About = () => {
           </div>
 
           <div className="md:col-span-3">
-            <div className="rounded-3xl relative overflow-hidden size-full">
+            <div className="rounded-3xl relative h-72 overflow-hidden size-full">
               <img
                 src="images/abt3.png"
                 alt="grid-image-3"
@@ -125,7 +125,7 @@ const About = () => {
           className="grid grid-cols-1 mt-10 md:grid-cols-12 md:gap-5 gap-10"
         >
           <div className="md:col-span-8">
-            <div className="relative rounded-3xl size-full overflow-hidden">
+            <div className="relative rounded-3xl h-72 size-full overflow-hidden">
               <img
                 src="images/abt4.png"
                 alt="grid-image-4"
@@ -135,7 +135,7 @@ const About = () => {
           </div>
 
           <div className="md:col-span-4">
-            <div className="relative rounded-3xl size-full overflow-hidden">
+            <div className="relative rounded-3xl h-72 size-full overflow-hidden">
               <img
                 src="images/abt5.png"
                 alt="grid-image-5"
