@@ -87,7 +87,7 @@ const About = () => {
 
         <div
           id="top-grid"
-          className="grid mt-12 grid-cols-1 md:grid-cols-12 md:gap-5 gap-10"
+          className="grid mt-12 grid-cols-1 md:grid-cols-12 gap-5"
         >
           <div className="md:col-span-3 md:w-fit w-full">
             <div className="rounded-3xl relative h-72 overflow-hidden size-full">
@@ -122,7 +122,7 @@ const About = () => {
 
         <div
           id="bottom-grid"
-          className="grid grid-cols-1 mt-10 md:grid-cols-12 md:gap-5 gap-10"
+          className="grid grid-cols-1 mt-5 md:grid-cols-12 gap-5"
         >
           <div className="md:col-span-8">
             <div className="relative rounded-3xl h-72 size-full overflow-hidden">
