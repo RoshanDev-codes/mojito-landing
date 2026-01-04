@@ -141,7 +141,7 @@ const Menu = () => {
 
         <div
           id="details"
-          className="md:absolute flex justify-between gap-20 md:bottom-30 w-10/12"
+          className="md:absolute flex justify-between gap-20 md:bottom-30 md:w-10/12 w-full"
         >
           <div className="md:space-y-4 space-y-10 max-w-40">
             <p>Recipe for:</p>

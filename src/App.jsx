@@ -21,7 +21,6 @@ const App = () => {
       <Art />
       <Menu />
       <Cta />
-      <div className="min-h-dvh"></div>
     </main>
   );
 };

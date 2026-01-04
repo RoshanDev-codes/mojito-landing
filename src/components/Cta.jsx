@@ -1,6 +1,47 @@
 import { openingHours, socials } from "../../constants";
+import { useGSAP } from "@gsap/react";
+import { SplitText } from "gsap/all";
+import gsap from "gsap";
 
 const Cta = () => {
+  useGSAP(() => {
+    const titleSplit = SplitText.create("#contact h2", { type: "words" });
+
+    const timeline = gsap.timeline({
+      scrollTrigger: {
+        trigger: "#contact",
+        start: "top center",
+      },
+      ease: "power1.inOut",
+    });
+
+    timeline
+      .from(titleSplit.words, {
+        opacity: 0,
+        yPercent: 100,
+        stagger: 0.02,
+      })
+      .from("#contact h3, #contact p", {
+        opacity: 0,
+        yPercent: 100,
+        stagger: 0.02,
+      })
+      .to("#f-right-leaf", {
+        y: "50",
+        duration: 1,
+        ease: "power1.inOut",
+      })
+      .to(
+        "#f-left-leaf",
+        {
+          y: "-50",
+          duration: 1,
+          ease: "power1.inOut",
+        },
+        "<"
+      );
+  });
+
   return (
     <footer
       id="contact"
@@ -10,7 +51,7 @@ const Cta = () => {
         src="images/footer-left-leaf.png"
         alt="left-leaf"
         id="f-left-leaf"
-        className="absolute bottom-0 left-0 pointer-events-none lg:w-fit w-1/3"
+        className="absolute -bottom-20 left-0 pointer-events-none lg:w-fit w-1/3"
       />
 
       <img
